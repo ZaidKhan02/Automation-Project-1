@@ -34,6 +34,7 @@ public class BasePage {
     By searchTypeBtn = By.xpath("//div[@class='search-facet']");
     By authorTypeBtn = By.xpath("//label[@class='search-facet-selector']//option[3]");
     By searchIcon = By.cssSelector("input[class=search-bar-submit]");
+    By userProfile = By.xpath("//div[@class='app-drawer']//li[3]");
 
     protected WebElement waitForVisibility(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -87,6 +88,10 @@ public class BasePage {
 
     public void clickLogoutBtn() {
         click(logoutBtn);
+    }
+
+    public void clickUserProfile() {
+        click(userProfile);
     }
 
     public boolean isLoginBtnDisplayed() {
