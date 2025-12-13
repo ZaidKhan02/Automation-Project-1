@@ -9,7 +9,7 @@ public class EditBookPage extends BasePage {
         super(driver);
     }
 
-    By pageHeader = By.cssSelector("//div[@id='contentHead']//h1");
+    By pageHeader = By.xpath("//div[@id='contentHead']//h1");
 
     public String getPageHeader() {
         return getText(pageHeader);

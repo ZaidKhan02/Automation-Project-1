@@ -1,6 +1,7 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +42,15 @@ public class BasePage {
     }
 
     protected WebElement waitForClickable(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    protected WebElement waitForPresence(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    protected List<WebElement> waitForAllElementsPresent(By locator) {
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
     }
 
     protected void click(By locator) {
@@ -61,7 +70,7 @@ public class BasePage {
     }
 
     protected String getAttribute(By locator, String attr) {
-        return waitForVisibility(locator).getAttribute(attr);
+        return waitForPresence(locator).getAttribute(attr);
     }
 
     protected boolean isDisplayed(By locator) {

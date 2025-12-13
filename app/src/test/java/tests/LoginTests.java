@@ -22,13 +22,13 @@ public class LoginTests extends BaseTest {
 
     @Test(groups = { "smoke", "login" })
     public void loginValidEmailValidPassword() {
-        loginPage.loginUser("zaidlovesmath@gmail.com", "Louiscathat123!");
+        loginPage.loginUser("zk7832456@gmail.com", "zk7832456pw");
         Assert.assertTrue(homePage.isUserAvatarDisplayed(), "Avatar should be visible after login");
     }
 
     @Test(groups = { "regression", "login" })
     public void loginEmailWithWhitespaceValidPassword() {
-        loginPage.loginUser("  zaidlovesmath@gmail.com  ", "Louiscathat123!");
+        loginPage.loginUser("  zk7832456@gmail.com  ", "zk7832456pw");
         Assert.assertTrue(homePage.isUserAvatarDisplayed(), "Avatar should be visible after login");
     }
 
