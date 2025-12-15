@@ -31,7 +31,7 @@ public class SearchTests extends BaseTest {
         homePage.clickSearchBtn();
         String actualAuthorName = searchPage.getAuthorName();
         Assert.assertEquals(actualAuthorName, expectedAuthorName,
-                "Actual author name should match expected author name");
+                "Actual suthor name should match expected author name");
     }
 
     /*
